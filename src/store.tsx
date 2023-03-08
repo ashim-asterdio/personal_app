@@ -17,17 +17,23 @@ const state: stateType = observable({
   actualData: [],
 });
 
-const apiCall = action(async () => {
+const changeLoading = action(async () => {
+  runInAction(() => {
+    state.loading = "loading";
+  });
+});
+
+const apiCall = action(async (type:string) => {
   state.loading = "loading";
-  console.log("before", state.data);
+  // console.log("before", state.data);
 
   try {
     const response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/forecast?lat=27.700769&lon=85.300140&appid=815097ac997cf4738e5926d21119e461&units=metric`
+      `https://api.openweathermap.org/data/2.5/forecast?lat=27.700769&lon=85.300140&appid=815097ac997cf4738e5926d21119e461&units=${type}`
     );
-    console.log("response", response.data.list);
+    // console.log("response", response.data.list);
     state.data = response.data;
-    console.log("after", state.data);
+    // console.log("after", state.data);
     runInAction(() => {
       var dates: string[] = [];
       var dummyList: {
@@ -61,8 +67,8 @@ const apiCall = action(async () => {
           ];
         }
       });
-      console.log(dates);
-      console.log(dummyList);
+      // console.log(dates);
+      // console.log(dummyList);
       state.actualData = dummyList;
       state.loading = "success";
       // console.log("actual data",state.actualData[0].date)
@@ -77,4 +83,4 @@ const increment = action(() => {
   state.count = state.count + 1;
 });
 
-export { state, apiCall, increment };
+export { state, apiCall, increment, changeLoading };
