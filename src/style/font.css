@@ -1,0 +1,6 @@
+@font-face {
+  font-family: "Product Sans";
+  src: local("Pacifico Regular"), local("Pacifico-Regular"),
+    url("/ProductSans.ttf") format("truetype");
+  font-display: swap;
+}

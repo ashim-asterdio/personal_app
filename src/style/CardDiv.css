@@ -1,0 +1,73 @@
+.slider {
+  height: 100%;
+}
+
+.slick-list {
+  height: 100%;
+}
+
+/* .slick-arrow {
+  border: solid 1px;
+  background: aqua !important;
+} */
+
+.slick-next {
+  right: -10px;
+}
+
+.slick-prev {
+  left: -10px;
+}
+
+.slick-arrow::before {
+  background: gray;
+  border-radius: 50%;
+}
+
+.slick-track {
+  height: 100%;
+}
+
+.slick-slide div {
+  height: 99%;
+}
+
+.Card {
+  /* height: 95%; */
+  display: flex !important;
+  justify-content: center;
+}
+
+.cardContent {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  gap: 20%;
+  font-weight: 700;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.temperature {
+  font-weight: 600;
+  font-size: 50px;
+}
+
+@media only screen and (max-width: 500px) {
+  .slider {
+    min-height: 200px;
+  }
+
+  .slick-slide div {
+    min-height: 185px;
+    display: flex;
+    align-items: center;
+  }
+
+  .slick-slide div .cardContent {
+    min-height: 180px;
+  }
+}

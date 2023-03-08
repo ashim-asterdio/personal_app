@@ -1,0 +1,246 @@
+@import "./home.css";
+
+body {
+  margin: 0px;
+}
+
+.alignmentContainer {
+  margin: 0px;
+  height: 100vh;
+  width: 97.5vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  font-family: "Product Sans", sans-serif;
+  color: white;
+  background-image: linear-gradient(to bottom, rgb(88, 101, 223), gray);
+  overflow: hidden;
+}
+
+.navDiv {
+  position: relative;
+  width: calc(100% - 50px);
+  max-width: 1440px;
+  min-height: 65px;
+  height: 70px;
+  padding: 0px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20%;
+}
+
+.form {
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
+
+input {
+  border-radius: 20px 0px 0 20px;
+  height: 100%;
+  width: 85%;
+  padding-left: 5%;
+  border: none;
+  z-index: 1;
+}
+
+input:focus {
+  outline: rgb(102, 99, 99) solid 0.15rem;
+}
+
+.searchButton {
+  height: 100%;
+  border-radius: 0 20px 20px 0;
+  border: none;
+  width: 25%;
+  cursor: pointer;
+}
+
+.containerDiv {
+  position: relative;
+  height: calc(100% - 80px);
+  width: calc(100% - 50px);
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1440px;
+  padding: 25px;
+}
+
+.cardDiv {
+  position: relative;
+  height: 30%;
+  width: 100%;
+  min-height: 200px;
+}
+
+.mainDiv {
+  height: 70%;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  max-height: 400px;
+}
+
+.leftDiv {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.location {
+  width: calc(100% - 20px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 400;
+  padding: 10px;
+}
+.city {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+.temp {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 100px;
+}
+
+.seperation {
+  height: 90%;
+  width: 0px;
+  border: 1px rgb(153, 146, 146) solid;
+}
+
+.chartDiv {
+  width: 70%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* ===CHART STYLE */
+
+.recharts-wrapper {
+  width: 90% !important;
+  height: 90%;
+  /* bottom: -15%;
+  left: -2%; */
+}
+
+.recharts-surface {
+  /* position: absolute; */
+  width: 100% !important;
+  /* height: 90% imo !important; */
+}
+
+.recharts-default-legend {
+  display: none;
+}
+
+.recharts-text {
+  fill: white !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .containerDiv {
+    gap: 50px;
+  }
+
+  .mainDiv {
+    max-height: fit-content;
+    flex-direction: column;
+  }
+
+  .leftDiv {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: fit-content;
+  }
+
+  .location {
+    width: fit-content;
+  }
+
+  .temp {
+    width: fit-content;
+  }
+
+  .seperation {
+    height: 0px;
+    width: 100%;
+  }
+  .chartDiv {
+    width: 100%;
+    height: fit-content;
+  }
+  .recharts-wrapper {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .alignmentContainer {
+    height: fit-content;
+  }
+
+  .containerDiv {
+    min-height: 100vh;
+    height: fit-content;
+  }
+
+  .cardDiv {
+    min-height: 200px;
+  }
+
+  .mainDiv {
+    flex-direction: column;
+  }
+  .chartDiv {
+    height: fit-content;
+    max-height: 200px;
+  }
+  .recharts-wrapper {
+    width: 100% !important;
+    height: fit-content !important;
+  }
+
+  .recharts-wrapper {
+    max-height: 200px;
+  }
+  .location {
+    width: calc(100% - 20px);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-weight: 400;
+    padding: 10px;
+  }
+  .city {
+    font-weight: 600;
+    font-size: 30px;
+  }
+  .temp {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 78px;
+  }
+}
